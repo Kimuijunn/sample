@@ -10,3 +10,4 @@
 
 게시판
 글쓰기
+https://chatgpt.com/canvas/shared/683036edde988191b5ca3edad2f53577
