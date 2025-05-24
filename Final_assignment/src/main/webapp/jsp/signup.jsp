@@ -47,7 +47,7 @@
 </head>
 <body>
     <div align="center">
-        <form action="signup_process.jsp" name="user_info" method="post" onsubmit="return checkFun()">
+        <form action="../process/signupProcess.jsp" name="user_info" method="post" onsubmit="return checkFun()">
             <fieldset style="width:300px">
                 <legend>회원 가입</legend><p>
 
