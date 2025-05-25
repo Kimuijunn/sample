@@ -32,7 +32,7 @@
 <body>
 
     <div align="center">
-        <form action="findAccountProcess.jsp" method="post" name="findPwForm" onsubmit="return checkPwForm()">
+        <form action="../process/findPwProcess.jsp" method="post" name="findPwForm" onsubmit="return checkPwForm()">
             <fieldset style="width:300px">
                 <legend>비밀번호 찾기</legend><br>
 
@@ -42,7 +42,7 @@
                 이메일 : <br>
                 <input type="email" name="userMAIL" style="width:100%; height:30px;"><br><br>
 
-                <input type="submit" value="비밀번호 재설정 요청">
+                <input type="submit" value="비밀번호 찾기">
             </fieldset>
         </form>
 

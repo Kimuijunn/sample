@@ -26,19 +26,15 @@
 	int count = sm.executeUpdate(sql);
 	if (count == 1){
 		out.println("회원 가입 성공!");
+ 		/* signupSucess.jsp 완성 되면 코드 수정
+ 		response.sendRedirect("../jsp/signupSucess.jsp");
+ 		*/
 	} else{
 		out.println("회원 가입 실패!");
+		/* 
+		response.sendRedirect("../jsp/signup.jsp");
+		*/
 	}
 	sm.close();
 	conn.close();
 	%>
-	
-<html>
-<head>
-<meta charset="UTF-8">
-<title>회원 가입 결과</title>
-</head>
-<body>
-
-</body>
-</html>

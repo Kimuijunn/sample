@@ -31,7 +31,7 @@
 <body>
 
     <div align="center">
-        <form action="findAccountProcess.jsp" method="post" name="findForm" onsubmit="return checkForm()">
+        <form action="../process/findIdProcess.jsp" method="post" name="findForm" onsubmit="return checkForm()">
             <fieldset style="width:300px">
                 <legend>아이디 찾기</legend><br>
 
@@ -46,7 +46,7 @@
         </form>
 
         <p>
-            <a href="login.jsp">로그인</a> |
+            <a href="main.jsp">로그인</a> |
             <a href="signup.jsp">회원가입</a>
         </p>
     </div>
