@@ -1,6 +1,6 @@
-<% page import="java.sql.*" %>
+<%@ page import="java.sql.*" %>
 <%
-	Connection Conn = null;
+	Connection conn = null;
 	String url = "jdbc:mysql://localhost:3306/odbo";
 	String user = "root";
 	String passwd = "123456";

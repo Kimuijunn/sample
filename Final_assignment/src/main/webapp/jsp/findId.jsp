@@ -31,7 +31,7 @@
 <body>
 
     <div align="center">
-        <form action="../process/findIdProcess.jsp" method="post" name="findForm" onsubmit="return checkForm()">
+        <form action="../process/findIdProcess.jsp" method="post" name="findIdForm" onsubmit="return checkForm()">
             <fieldset style="width:300px">
                 <legend>아이디 찾기</legend><br>
 

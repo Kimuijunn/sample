@@ -47,7 +47,7 @@
         </form>
 
         <p>
-            <a href="login.jsp">로그인</a> |
+            <a href="main.jsp">로그인</a> |
             <a href="signup.jsp">회원가입</a>
         </p>
     </div>
