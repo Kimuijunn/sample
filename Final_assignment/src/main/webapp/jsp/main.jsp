@@ -30,6 +30,14 @@
     </script>
 </head>
 <body>
+<%
+    String msg = request.getParameter("msg");
+    if ("success".equals(msg)) {
+%>
+    <p style="color: green; text-align: center;">회원 가입 성공!</p>
+<%
+    }
+%>
 
     <div align="center">
         <form action="loginProcess.jsp" name="user_info" method="post" onsubmit="return checkLogin()">

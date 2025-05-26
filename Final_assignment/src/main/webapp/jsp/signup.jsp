@@ -46,36 +46,54 @@
     </script>
 </head>
 <body>
+<%
+    String msg = (String) request.getAttribute("msg");
+    if (msg != null) {
+%>
+    <p style="color:red; text-align:center;"><%= msg %></p>
+<%
+    }
+%>
+
     <div align="center">
         <form action="../process/signupProcess.jsp" name="user_info" method="post" onsubmit="return checkFun()">
             <fieldset style="width:300px">
                 <legend>회원 가입</legend><p>
 
                 아이디 : <br>
-                <input type="text" name="userID" style="width:100%; height:30px;"><br><br>
+                <input type="text" name="userID" 
+                value="<%= request.getParameter("userID") != null ? request.getParameter("userID") : "" %>"
+                style="width:100%; height:30px;"><br><br>
 
                 비밀번호 : <br>
-                <input type="password" name="userPW" style="width:100%; height:30px;"><br><br>
+                <input type="password" name="userPW" 
+                value="<%= request.getParameter("userPW") != null ? request.getParameter("userPW") : "" %>"
+                style="width:100%; height:30px;"><br><br>
 
                 이름 : <br>
-                <input type="text" name="userName" style="width:100%; height:30px;"><br><br>
+                <input type="text" name="userName" 
+                value="<%= request.getParameter("userName") != null ? request.getParameter("userName") : "" %>"
+                style="width:100%; height:30px;"><br><br>
 
                 생년월일 (8자리, 예: 20000101) : <br>
-                <input type="text" name="userBirth" maxlength="8" style="width:100%; height:30px;"><br><br>
+                <input type="text" name="userBirth" 
+                value="<%= request.getParameter("userBirth") != null ? request.getParameter("userBirth") : "" %>"
+                maxlength="8" style="width:100%; height:30px;"><br><br>
 
                 성별 : <br>
                 <input type="radio" name="userGender" value="남자" checked> 남자
                 <input type="radio" name="userGender" value="여자"> 여자<br><br>
 
                 이메일 : <br>
-                <input type="email" name="userMAIL" style="width:100%; height:30px;"><br><br>
+                <input type="email" name="userMAIL" 
+                value="<%= request.getParameter("userMAIL") != null ? request.getParameter("userMAIL") : "" %>"
+                style="width:100%; height:30px;"><br><br>
 
                 <hr>
 
                 <div align="center">
                     <input type="submit" value="가입하기">&nbsp;&nbsp;
-                    <input type="reset" value="다시작성">
-                </div>
+                    <input type="button" value="다시 작성" onclick="window.location.href='${pageContext.request.contextPath}/jsp/signup.jsp'">
             </fieldset>
         </form>
     </div>
