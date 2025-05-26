@@ -22,13 +22,11 @@
 	ResultSet rs = sm.executeQuery("SELECT id, name, birth, gender, email, signuptime FROM members");
 	
 	String str = "";
-	int count = 1;
 	
 	while(rs.next()) {
-		str += "유저 " + count + " : " + rs.getString("id") + " / " + rs.getString("name")
-			+ " / " + rs.getString("birth") + " / " + rs.getString("gender") + " / "
+		str += rs.getString("name") + " : " + rs.getString("id") + " / " 
+			+ rs.getString("birth") + " / " + rs.getString("gender") + " / "
 			+ rs.getString("email") + " / " + rs.getString("signuptime") + "<br>";
-		count++;
 	}
 	
 	out.print("Home > 회원 가입 명단 <hr>");
