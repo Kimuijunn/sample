@@ -25,10 +25,25 @@
         <filter-name>EncodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+<servlet>
+  <servlet-name>postCreateJSP</servlet-name>
+  <jsp-file>/process/postCreate.jsp</jsp-file>
+  <multipart-config>
+    <location>C:/temp</location>
+    <max-file-size>5242880</max-file-size>
+    <max-request-size>20971520</max-request-size>
+    <file-size-threshold>1048576</file-size-threshold>
+  </multipart-config>
+</servlet>
+<servlet-mapping>
+  <servlet-name>postCreateJSP</servlet-name>
+  <url-pattern>/process/postCreate.jsp</url-pattern>
+</servlet-mapping>
+
 
     <!-- 시작 페이지 설정 -->
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>main.jsp</welcome-file>
     </welcome-file-list>
 
 </web-app>

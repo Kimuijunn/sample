@@ -6,7 +6,6 @@
     String u_id = request.getParameter("userID");
     String u_pw = request.getParameter("userPW");
 
-
     String driver = "com.mysql.cj.jdbc.Driver";
     String url    = "jdbc:mysql://localhost:3306/odbo";
     String dbUser = "root";
@@ -20,14 +19,19 @@
         Class.forName(driver);
         conn = DriverManager.getConnection(url, dbUser, dbPass);
 
-        String sql = "SELECT id FROM members WHERE id = ? AND passwd = ?";
+        String sql = "SELECT id, name, email, birth, gender FROM members WHERE id = ? AND passwd = ?";
         pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, u_id);
         pstmt.setString(2, u_pw);
         rs = pstmt.executeQuery();
 
         if (rs.next()) {
-            session.setAttribute("loginUser", u_id);
+            session.setAttribute("userId", rs.getString("id"));
+            session.setAttribute("userName", rs.getString("name"));
+            session.setAttribute("userMAIL", rs.getString("email"));
+            session.setAttribute("userBirth", rs.getString("birth"));
+            session.setAttribute("userGender", rs.getString("gender"));
+
             response.sendRedirect(request.getContextPath() + "/jsp/postList.jsp");
         } else {
             response.sendRedirect(request.getContextPath() + "/jsp/loginFail.jsp");

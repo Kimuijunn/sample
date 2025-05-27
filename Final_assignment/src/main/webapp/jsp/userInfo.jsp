@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%
     // 세션에서 사용자 정보 가져오기 (예시)
-    String userId = (String) session.getAttribute("userID");
+    String userId = (String) session.getAttribute("userId");
     String userName = (String) session.getAttribute("userName");
     String userBirth = (String) session.getAttribute("userBirth");
     String userGender = (String) session.getAttribute("userGender");

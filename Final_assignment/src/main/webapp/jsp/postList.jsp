@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-    // 예시 세션에서 사용자 정보 가져오기 (B파트에서 설정해야 동작)
+    
     String userName = (String) session.getAttribute("userName");
     String userEmail = (String) session.getAttribute("userMAIL");
-    // 삭제 예정
-    if (userName == null) userName = "모름";
-    if (userEmail == null) userEmail = "user@example.com";
+    
+    if (userName == null) userName = (String) session.getAttribute("userName");
+    if (userEmail == null) userEmail = (String) session.getAttribute("userMAIL");
 %>
 <!DOCTYPE html>
 <html>
