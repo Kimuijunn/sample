@@ -93,7 +93,7 @@
 %>
 
     <div align="center">
-        <form action="loginProcess.jsp" name="user_info" method="post" onsubmit="return checkLogin()">
+        <form action="../process/loginProcess.jsp" name="user_info" method="post" onsubmit="return checkLogin()">
             <fieldset>
                 <div class="title">로그인</div>
 

@@ -27,7 +27,7 @@
             String foundId = rs.getString("id");
 %>
             <script>
-                alert("아이디는: <%= foundId %> 입니다.");
+                alert("아이디는 <%= foundId %> 입니다.");
                 location.href = "../jsp/main.jsp";
             </script>
 <%
