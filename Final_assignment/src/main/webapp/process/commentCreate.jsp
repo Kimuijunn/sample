@@ -5,10 +5,11 @@
     request.setCharacterEncoding("UTF-8");
 
     // 세션에서 로그인한 사용자 ID 가져오기
-    String author = (String) session.getAttribute("loginUserID");
+    String author = (String) session.getAttribute("userId");
     if (author == null) {
-        // 로그인되지 않은 경우, 로그인 페이지로 이동
-        response.sendRedirect(request.getContextPath() + "/jsp/login.jsp");
+        // 로그인되지 않은 경우, 로그인 페이지로 이동 
+        // 로그인 페이지 login -> main으로 변경
+        response.sendRedirect(request.getContextPath() + "/jsp/main.jsp");
         return;
     }
 
