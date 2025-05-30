@@ -16,9 +16,6 @@
     <label for="content">내용:</label><br>
     <textarea name="content" id="content" rows="10" cols="60" required></textarea><br><br>
 
-    <label for="uploadFile">이미지 첨부:</label><br>
-    <input type="file" name="uploadFile" id="uploadFile" accept="image/*"><br><br>
-
     <input type="submit" value="등록">
     <a href="postList.jsp">목록으로</a>
 </form>
