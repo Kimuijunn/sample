@@ -15,7 +15,7 @@
     <script>
         function confirmDelete() {
             if (confirm("정말로 회원 탈퇴하시겠습니까? 탈퇴 시 복구할 수 없습니다.")) {
-                location.href = "<%= request.getContextPath() %>/process/deleteUser.jsp";
+                location.href = "<%= request.getContextPath() %>/process/deleteUserProcess.jsp";
             }
         }
     </script>

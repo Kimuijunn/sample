@@ -3,11 +3,8 @@
 <%
     request.setCharacterEncoding("UTF-8");
 
-    // 세션에서 로그인한 사용자 ID 가져오기
     String author = (String) session.getAttribute("userId");
     if (author == null) {
-        // 로그인되지 않은 경우, 로그인 페이지로 이동 
-        // 로그인 페이지 login -> main으로 변경
         response.sendRedirect(request.getContextPath() + "/jsp/main.jsp");
         return;
     }
@@ -27,7 +24,6 @@
         Class.forName(driver);
         conn = DriverManager.getConnection(url, dbUser, dbPass);
 
-        // 댓글 저장 쿼리
         String sql = "INSERT INTO comments(post_id, author, comment_text, created_at) VALUES(?, ?, ?, NOW())";
         pstmt = conn.prepareStatement(sql);
         pstmt.setInt(1, Integer.parseInt(postId));
@@ -35,7 +31,6 @@
         pstmt.setString(3, commentText);
         pstmt.executeUpdate();
 
-        // 댓글 등록 후 상세 페이지로 리다이렉트
         response.sendRedirect(request.getContextPath() + "/jsp/postDetail.jsp?postId=" + postId);
     } catch (Exception e) {
         e.printStackTrace();

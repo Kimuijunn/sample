@@ -8,4 +8,3 @@
 	Class.forName("com.mysql.jdbc.Driver");
 	conn = DriverManager.getConnection(url, user, passwd);
 %>
-<%-- DB 연동용 입니다. --%>

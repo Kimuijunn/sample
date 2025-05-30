@@ -27,7 +27,6 @@
 
         if (rs.next()) {
             session.setAttribute("userId", rs.getString("id"));
-            // 비밀번호 추가!
             session.setAttribute("userPW", u_pw);
             session.setAttribute("userName", rs.getString("name"));
             session.setAttribute("userMAIL", rs.getString("email"));

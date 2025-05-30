@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%
-	String u_id = request.getParameter("userID");
+	String userId = (String) session.getAttribute("userId");
 	String sql = "DELETE FROM members WHERE id = ?";
 	
 	String driverName = "com.mysql.jdbc.Driver";
@@ -14,17 +14,15 @@
 	Class.forName(driverName);
 	conn = DriverManager.getConnection(url, username, password);
 	PreparedStatement sm = conn.prepareStatement(sql);
-	sm.setString(1, u_id);
+	sm.setString(1, userId);
 	
 	int count = sm.executeUpdate();
 	
 	if (count == 1){
-		out.print("회원 탈퇴 성공!");
-		/* drawSuccess.jsp 완성되면 코드 수정
-		response.sendRedirect("../jsp/drawSuccess.jsp");
-		*/
+		session.invalidate();
+		response.sendRedirect("../jsp/deleteSuccess.jsp");
 	} else {
-		out.print("회원 탈퇴 실패!");
+		response.sendRedirect("../jsp/deleteFail.jsp");
 	}
 	sm.close();
 	conn.close();
