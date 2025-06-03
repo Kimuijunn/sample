@@ -21,7 +21,6 @@
     Connection conn = null;
     Statement sm = null;
 
-    try {
         Class.forName(driverName);
         conn = DriverManager.getConnection(url, username, password);
         sm = conn.createStatement();
@@ -35,13 +34,7 @@
             dispatcher.forward(request, response);
         }
 
-    } catch (Exception e) {
-        e.printStackTrace();
-        request.setAttribute("msg", "회원 가입 실패!");
-        RequestDispatcher dispatcher = request.getRequestDispatcher("../jsp/signup.jsp");
-        dispatcher.forward(request, response);
-    } finally {
-        if (sm != null) try { sm.close(); } catch (Exception e) {}
-        if (conn != null) try { conn.close(); } catch (Exception e) {}
-    }
+        sm.close();
+        conn.close();
+   
 %>
