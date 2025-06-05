@@ -33,7 +33,7 @@
 
 <h1 style="text-align: center;">자유 게시판</h1>
 
-<!-- 사용자 정보 -->
+
 <div>
     <p><strong><%= userName %></strong> 님</p>
     <p><%= userEmail %></p>
@@ -46,13 +46,13 @@
     </p>
 </div>
 
-<!-- 검색창 -->
+
 <form action="postList.jsp" method="get">
     <input type="text" name="search" placeholder="검색어 입력">
     <input type="submit" value="검색">
 </form>
 
-<!-- 게시글 목록 테이블 -->
+
 <table border="1" width="100%" cellpadding="10" cellspacing="0">
     <tr>
         <th>번호</th>
@@ -74,7 +74,7 @@
     %>
 </table>
 
-<!-- 글쓰기 버튼 -->
+
 <p style="text-align: right;">
     <a href="postForm.jsp">글쓰기</a>
 </p>

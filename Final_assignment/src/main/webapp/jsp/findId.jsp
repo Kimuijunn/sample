@@ -29,14 +29,6 @@
 </head>
 <body>
 
-<%
-    String msg = (String) request.getAttribute("msg");
-    if (msg != null) {
-%>
-    <p style="color:red; text-align:center; font-weight:bold;"><%= msg %></p>
-<%
-    }
-%>
 
 <div>
     <form action="../process/findIdProcess.jsp" method="post" name="findIdForm" onsubmit="return checkForm()">

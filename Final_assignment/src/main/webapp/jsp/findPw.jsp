@@ -30,14 +30,6 @@
 </head>
 <body>
 
-<%
-    String msg = (String) request.getAttribute("msg");
-    if (msg != null) {
-%>
-    <p style="color:red; text-align:center; font-weight:bold;"><%= msg %></p>
-<%
-    }
-%>
 
 <div>
     <form action="../process/findPwProcess.jsp" method="post" name="findPwForm" onsubmit="return checkPwForm()">
